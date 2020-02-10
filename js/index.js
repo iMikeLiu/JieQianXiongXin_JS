@@ -4,6 +4,10 @@ jqxx.ShiJian=15000;
 jqxx.BeiSu=[Infinity,12000,6000,4000,2000,1000,500];
 jqxx_repeat=function(){
 	if(jqxx.ShiJian!=Infinity){
+		if(document.getElementById("原油")!=null){
+			jqxx_XianShiQiHuo();
+		}
+	jqxx.ShuJu.QiHuo=jqxx_GengXinQiHuo(jqxx.ShuJu.QiHuo);
 	jqxx_CunChuShuJu(JSON.stringify(jqxx));
 	if(jqxx.ShuJu.date.getMonth()===12)
 	{
@@ -32,4 +36,35 @@ function jqxx_XianShiShuJu()
 	人口.innerHTML=jqxx.ShuJu.people;
 	面积.innerHTML=(jqxx.ShuJu.cover/1000000).toFixed(2)+"平方千米";
 	时间.innerHTML=jqxx.ShuJu.date.getFullYear()+"年"+(jqxx.ShuJu.date.getMonth()+1)+"月";
+}
+function jqxx_XianShiQiHuo()
+{
+	原油.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.YuanYou[1],2);
+	煤.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.Mei[1],2);
+	花生.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.HuaSheng[1],2);
+	大豆.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.DaDou[1],2);
+	黄金.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.HuangJin[1],2);
+	铜.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.Tong[1],2);
+	铝.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.Lv[1],2);
+	眼镜.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.YanJing[1],2);
+	原油o.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.YuanYou[0],2);
+	煤o.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.Mei[0],2);
+	花生o.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.HuaSheng[0],2);
+	大豆o.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.DaDou[0],2);
+	黄金o.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.HuangJin[0],2);
+	铜o.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.Tong[0],2);
+	铝o.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.Lv[0],2);
+	眼镜o.innerHTML=jqxx_BaoLiuXiaoShu(jqxx.ShuJu.QiHuo.YanJing[0],2);
+}
+function jqxx_GengXinQiHuo(QiHuo)
+{
+	QiHuo.YuanYou[1]=jqxx_SuiJiBoDong(QiHuo.YuanYou[1],1);
+	QiHuo.Mei[1]=jqxx_SuiJiBoDong(QiHuo.Mei[1],5);
+	QiHuo.HuaSheng[1]=jqxx_SuiJiBoDong(QiHuo.HuaSheng[1],6);
+	QiHuo.DaDou[1]=jqxx_SuiJiBoDong(QiHuo.DaDou[1],7);
+	QiHuo.HuangJin[1]=jqxx_SuiJiBoDong(QiHuo.HuangJin[1],10);
+	QiHuo.Tong[1]=jqxx_SuiJiBoDong(QiHuo.Tong[1],20);
+	QiHuo.Lv[1]=jqxx_SuiJiBoDong(QiHuo.Lv[1],10);
+	QiHuo.YanJing[1]=jqxx_SuiJiBoDong(QiHuo.YanJing[1],100);
+	return QiHuo;
 }

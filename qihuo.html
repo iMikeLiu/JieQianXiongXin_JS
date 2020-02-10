@@ -1,0 +1,143 @@
+<html>
+<meta charset="UTF-8">
+<head>
+<script src="js/init.js"></script>
+<script>
+jqxx_YinYong("js/log.js");
+jqxx_YinYong("js/storage.js");
+jqxx_YinYong("js/library.js");
+jqxx_YinYong("js/data.js");
+jqxx_YinYong("js/index.js");
+jqxx_YinYong("js/calc.js");
+
+jqxx_YinYong("js/dom.js");
+jqxx_YinYong("js/index.js");
+jqxx_YangShi("css/style.css");
+</script>
+</head>
+<body>
+	<center>
+	<div id="time">
+	<span>当前速度：</span><span id="jqxx_speed">0x</span>
+	<button onclick="jqxx_SuDu(0)">暂停</button>
+	<button onclick="jqxx_SuDu(1)">1x</button>
+	<button onclick="jqxx_SuDu(2)">2x</button>
+	<button onclick="jqxx_SuDu(3)">3x</button>
+	<button onclick="jqxx_SuDu(4)">4x</button>
+	<button onclick="jqxx_SuDu(5)">5x</button>
+	<button onclick="jqxx_SuDu(6)">6x</button>
+</div>
+</center>
+	<center><font size="10px">期货 V2</font></center>
+	<div id="left">
+	<div id="data">
+	<center>
+	<table>
+		<center>游戏数据</center>
+		<tr>
+			<th>现金</th>
+			<th>借款</th>
+			<th>存款</th>
+			<th>存款利息</th>
+			<th>借款利息</th>
+			<th>人口</th>
+			<th>面积</th>
+			<th>时间</th>
+		</tr>
+		<tr>
+			<td id="现金">0</td>
+			<td id="借款">0</td>
+			<td id="存款">0</td>
+			<td id="借款利息">0</td>
+			<td id="存款利息">0</td>
+			<td id="人口">0</td>
+			<td id="面积">0</td>
+			<td id="时间">0</td>
+		</tr>
+	</table>
+	<table>
+		<center>行情</center>
+		<tr>
+			<th>种类</th>
+			<th>原油</th>
+			<th>煤</th>
+			<th>花生</th>
+			<th>大豆</th>
+			<th>黄金</th>
+			<th>铜</th>
+			<th>铝</th>
+			<th>眼镜</th>
+			<th>时间</th>
+		</tr>
+		<tr>
+			<td>价格 元/份</td>
+			<td id="原油">0</td>
+			<td id="煤">0</td>
+			<td id="花生">0</td>
+			<td id="大豆">0</td>
+			<td id="黄金">0</td>
+			<td id="铜">0</td>
+			<td id="铝">0</td>
+			<td id="眼镜">0</td>
+			<td id="时间">0</td>
+		</tr>
+		<tr>
+			<td>拥有量 份</td>
+			<td id="原油o">0</td>
+			<td id="煤o">0</td>
+			<td id="花生o">0</td>
+			<td id="大豆o">0</td>
+			<td id="黄金o">0</td>
+			<td id="铜o">0</td>
+			<td id="铝o">0</td>
+			<td id="眼镜o">0</td>
+			<td id="时间o">0</td>
+		</tr>
+	</table>
+	</center>
+	</div>
+	<div id="main">
+	<center>
+		<button onclick="jqxx_JieQian()" class="jqxx_main">借钱</button>
+		<br>
+		<button onclick="jqxx_HuanQian()" class="jqxx_main">还钱</button>
+		<br>
+		<button onclick="jqxx_CunQian()" class="jqxx_main">存钱</button>
+		<br>
+		<!--<button onclick="jqxx_JianShe()" class="jqxx_main">建设</button>
+		<br>-->
+		<button onclick="jqxx_QuQian()" class="jqxx_main">取钱</button>
+		<br>
+		<select id="jqxx_QiHuoXuanZe" class="jqxx_main">
+			<option>原油</option>
+			<option>煤</option>
+			<option>花生</option>
+			<option>大豆</option>
+			<option>黄金</option>
+			<option>铜</option>
+			<option>铝</option>
+			<option>眼镜</option>
+			<!--<option>时间</option>-->
+		</select>
+		<input type="textarea" id="jqxx_QiHuoShuLiang" class="jqxx_main"/>
+		<span class="jqxx_main">份</span>
+		<br>
+		<button onclick="jqxx_GouMaiQiHuo(parseInt(jqxx_QiHuoShuLiang.value))" class="jqxx_main">购买</button>
+		<br>
+		<button onclick="jqxx_PaoShouQiHuo(parseInt(jqxx_QiHuoShuLiang.value))" class="jqxx_main">抛售</button>
+		<br>
+		<button onclick="jqxx_ZhuYe()" class="jqxx_main">主页</button>
+		<br>
+	</center>
+
+		<font size="1px">JieQianXiongXin V2<br>
+	Copyright &copy; 2019 MikeLiu<br>
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:<br>
+	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.<br>
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	</font>
+	</div>
+	<script>jqxx_XianShiShuJu();jqxx_XianShiQiHuo();</script>
+
+</body>
+</html>

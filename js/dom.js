@@ -129,3 +129,56 @@ function jqxx_CunChuJiaoBen(data,dataName)
 	jqxx_CunChuLieBiao(dataName);
 	jqxx_CunChu(dataName,data);
 }
+function jqxx_QiHuo()
+{
+	jqxx_TiaoZhuan("qihuo.html");
+}
+function jqxx_DeDaoPinYin(data)
+{
+	const PinYin={
+		原油:"YuanYou",
+		煤:"Mei",
+		花生:"HuaSheng",
+		大豆:"DaDou",
+		黄金:"HuangJin",
+		铜:"Tong",
+		铝:"Lv",
+		眼镜:"YanJing",
+		时间:"ShiJian"
+	}
+	return PinYin[data]
+}
+function jqxx_GouMaiQiHuo(count)
+{
+	var val=jqxx.ShuJu.QiHuo[jqxx_DeDaoPinYin(jqxx_QiHuoXuanZe.selectedOptions[0].innerHTML)][1];
+	var own=jqxx.ShuJu.QiHuo[jqxx_DeDaoPinYin(jqxx_QiHuoXuanZe.selectedOptions[0].innerHTML)][0];
+	if(val*count>jqxx.ShuJu.money)
+	{
+		alert("金钱不足！");
+	}
+	else
+	{
+		jqxx.ShuJu.QiHuo[jqxx_DeDaoPinYin(jqxx_QiHuoXuanZe.selectedOptions[0].innerHTML)][0]+=count;
+		jqxx.ShuJu.money-=val*count;
+	}
+	jqxx_repeat();
+}
+function jqxx_PaoShouQiHuo(count)
+{
+	var val=jqxx.ShuJu.QiHuo[jqxx_DeDaoPinYin(jqxx_QiHuoXuanZe.selectedOptions[0].innerHTML)][1];
+	var own=jqxx.ShuJu.QiHuo[jqxx_DeDaoPinYin(jqxx_QiHuoXuanZe.selectedOptions[0].innerHTML)][0];
+	if(count>own)
+	{
+		alert("期货不足！");
+	}
+	else
+	{
+		jqxx.ShuJu.QiHuo[jqxx_DeDaoPinYin(jqxx_QiHuoXuanZe.selectedOptions[0].innerHTML)][0]-=count;
+		jqxx.ShuJu.money+=val*count;
+	}	
+	jqxx_repeat();
+}
+function jqxx_ZhuYe()
+{
+	jqxx_TiaoZhuan("index.html")
+}

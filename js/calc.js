@@ -28,3 +28,7 @@ function jqxx_BaoLiuXiaoShu(Shu,BaoLiu)
 	jqxx_log.log("calc","保留小数计算成功");
 	return parseFloat(Shu.toFixed(BaoLiu));
 }
+function jqxx_SuiJiBoDong(value,range)
+{
+	return value+jqxx_SuiJi(0,2*range)-range;
+}

@@ -1,7 +1,7 @@
 var jqxx={};
 jqxx.ShuJu=new jqxx_YouXiShuJu();
 jqxx.ShiJian=15000;
-jqxx.BeiSu=[Infinity,12000,6000,4000,2000,1000,500];
+jqxx.BeiSu=[Infinity,60000,30000,15000,10000,9000,8000];
 jqxx_repeat=function(){
 	if(jqxx.ShiJian!=Infinity){
 		if(document.getElementById("原油")!=null){

@@ -22,7 +22,7 @@ jqxx_YangShi("css/style.css");
 	<br>
 	<textarea id="jqxx_JiaoBenMingCheng"></textarea>
 	<br>
-	<button onclick="jqxx_JiaoBenNeiRong.innerHTML=jqxx_DuQuJiaoBen(jqxx_JiaoBenMingCheng.value)">读取脚本</button>
+	<button onclick="jqxx_JiaoBenNeiRong.innerHTML=jqxx_DuQuJiaoBen(jqxx_XuanZeJiaoBen.selectedOptions[0].innerHTML);init()">读取脚本</button>
 	<br>
 	<span>脚本内容：</span><br>
 	<textarea id="jqxx_JiaoBenNeiRong"></textarea>
@@ -30,10 +30,17 @@ jqxx_YangShi("css/style.css");
 	<span>脚本地址：</span><br>
 	<textarea id="jqxx_JiaoBenDiZhi"></textarea>
 	<input type="file" id="file" name="file" />
-	<input type="button" onclick="jqxx_ShangChuanJiaoBen(file.files[0],jqxx_JiaoBenMingCheng.value)" value="从文件存储脚本" />
-		<input type="button" onclick="jqxx_XiaZaiJiaoBen(jqxx_JiaoBenDiZhi.value,jqxx_JiaoBenMingCheng.value)" value="从地址存储脚本" />
-	<input type="button" onclick="jqxx_CunChuJiaoBen(jqxx_JiaoBenNeiRong.value,jqxx_JiaoBenMingCheng.value)" value="从行内文本存储脚本" />
-	<input type="button" onclick="jqxx_ShanChuLieBiao(jqxx_JiaoBenMingCheng.value);init();" value="删除脚本" />
+	<input type="button" onclick="jqxx_ShangChuanJiaoBen(file.files[0],jqxx_JiaoBenMingCheng.value);" value="从文件存储脚本" />
+	<input type="button" onclick="jqxx_XiaZaiJiaoBen(jqxx_JiaoBenDiZhi.value,jqxx_JiaoBenMingCheng.value);" value="从地址存储脚本" />
+	<input type="button" onclick="jqxx_CunChuJiaoBen(jqxx_JiaoBenNeiRong.value,jqxx_JiaoBenMingCheng.value);" value="从行内文本存储脚本" />
+	<input type="button" onclick="jqxx_ShanChuLieBiao(jqxx_XuanZeJiaoBen.selectedOptions[0].innerHTML);" value="删除脚本" />
+	<br>
+	<input type="button" onclick="location.reload()" value="刷新显示" />
+	<br>
+	<div id="jqxx_NeiZhiJiaoBen">
+	<h2>系统内置脚本</h2>
+	<a href="javascript:jqxx_XiaZaiJiaoBen('js/events/event1.js',jqxx_JiaoBenMingCheng.value)">默认脚本</a>
+	</div>
 	<br>
 	<font size="1px">JieQianXiongXin V2<br>
 	Copyright &copy; 2019 MikeLiu<br>
@@ -48,7 +55,7 @@ if(jqxx_DeDaoLieBiao()==[])
 {
 	jqxx_CunChu("__GlobalList",[]);
 }
-jqxx_JiaoBenLieBiao.innerHTML='脚本列表：['+jqxx_DeDaoLieBiao()+']';
+jqxx_JiaoBenLieBiao.innerHTML=ml_creatOption(jqxx_DeDaoLieBiao(),"jqxx_XuanZeJiaoBen","jqxx_XuanZeJiaoBen");
 }
 init()
 </script>

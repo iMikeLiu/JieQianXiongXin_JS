@@ -50,3 +50,18 @@ function jqxx_ZhiXingSuoYouJiaoBen()
 		eval(jqxx_DuQu(list[o]));
 	}
 }
+//从 seats_random 项目获取
+//seats_random Copyright MikeLiu 2019-2020
+//seats_random 遵循 GNU GPL 2.0 协议
+function ml_creatOption(data,id,name)
+{
+	var tableData='<select id="'+id+'" name="'+name+'">';
+	for(var i=0;i<data.length;i++)
+	{
+			tableData+="<option value="+'"'+i+'"'+">";
+			tableData+=data[i];
+			tableData+="</option>";
+	}
+	tableData+="</select>";
+	return tableData;
+}

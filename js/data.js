@@ -42,10 +42,11 @@ function jqxx_ShuJuGouZao(year)
 	this.borrowinterest=jqxx_SuiJi(0,5)//借钱利息
 	this.house=jqxx_SuiJiZhengShu(10000,100000)//住宅楼个数
 	this.business=jqxx_SuiJiZhengShu(10000,100000)//商务楼个数
-	this.saveinterest=jqxx_SuiJi(0,3)
+	this.borrowinterest=jqxx_SuiJi(0,1)
+	this.saveinterest=jqxx_SuiJi(0,1)
 	while(this.saveinterest<this.borrowinterest)
 	{
-		this.saveinterest=jqxx_SuiJi(0,3)//存钱利息
+		this.saveinterest=jqxx_SuiJi(0,1)//存钱利息
 	}
 	
 	this.yourhospital=0//你的医院

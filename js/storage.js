@@ -21,12 +21,14 @@ function jqxx_DuQu(dataName)
 function jqxx_CunChuLieBiao(name)
 {
 	var list=jqxx_DeDaoLieBiao();
+	if(list===null)list=[];
 	list.push(name);
 	jqxx_CunChu("__GlobalList",JSON.stringify(list));
 }
 function jqxx_ShanChuLieBiao(name)
 {
 	var list=jqxx_DeDaoLieBiao();
+	if(list===null)list=[];
 	for(i=0;i<list.length;i++)
 	{
 		if(list[i]==name)

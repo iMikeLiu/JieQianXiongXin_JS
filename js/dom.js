@@ -182,3 +182,9 @@ function jqxx_ZhuYe()
 {
 	jqxx_TiaoZhuan("index.html")
 }
+function jqxx_XiaZaiJiaoBen(url,dataName)
+{
+	jqxx_ajax({url:url,type:"get",success:function(data){
+		jqxx_CunChuJiaoBen(data,dataName)
+	}})
+}

@@ -22,13 +22,17 @@ jqxx_YangShi("css/style.css");
 	<br>
 	<textarea id="jqxx_JiaoBenMingCheng"></textarea>
 	<br>
-	<button onclick="JiaoBenNeiRong.innerHTML=jqxx_DuQuJiaoBen(jqxx_JiaoBenMingCheng.value)">读取脚本</button>
+	<button onclick="jqxx_JiaoBenNeiRong.innerHTML=jqxx_DuQuJiaoBen(jqxx_JiaoBenMingCheng.value)">读取脚本</button>
 	<br>
 	<span>脚本内容：</span><br>
-	<textarea id="JiaoBenNeiRong"></textarea>
+	<textarea id="jqxx_JiaoBenNeiRong"></textarea>
+	<br>
+	<span>脚本地址：</span><br>
+	<textarea id="jqxx_JiaoBenDiZhi"></textarea>
 	<input type="file" id="file" name="file" />
 	<input type="button" onclick="jqxx_ShangChuanJiaoBen(file.files[0],jqxx_JiaoBenMingCheng.value)" value="从文件存储脚本" />
-	<input type="button" onclick="jqxx_CunChuJiaoBen(JiaoBenNeiRong.value,jqxx_JiaoBenMingCheng.value)" value="从行内文本存储脚本" />
+		<input type="button" onclick="jqxx_XiaZaiJiaoBen(jqxx_JiaoBenDiZhi.value,jqxx_JiaoBenMingCheng.value)" value="从地址存储脚本" />
+	<input type="button" onclick="jqxx_CunChuJiaoBen(jqxx_JiaoBenNeiRong.value,jqxx_JiaoBenMingCheng.value)" value="从行内文本存储脚本" />
 	<input type="button" onclick="jqxx_ShanChuLieBiao(jqxx_JiaoBenMingCheng.value);init();" value="删除脚本" />
 	<br>
 	<font size="1px">JieQianXiongXin V2<br>
